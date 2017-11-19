@@ -1,0 +1,14 @@
+{
+  "name": "zadanie_19.4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Action.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mgrobelny",
+  "license": "ISC",
+  "dependencies": {
+    "uuid": "^3.1.0"
+  }
+}
