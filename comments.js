@@ -1,4 +1,3 @@
-
 import {ADD_COMMENT, EDIT_COMMENT, DELETE_COMMENT, ADD_LIKE_TO_COMMENT, ADD_UNLIKE_TO_COMMENT} from './actions';
 
 function reducer(state = [], action) {
@@ -13,20 +12,20 @@ function reducer(state = [], action) {
 			, ...state];
 
 		case DELETE_COMMENT:
-            return state.filter(comment => comment.id !== action.id);
+			return state.filter(comment => comment.id !== action.id);
 
-        case EDIT_COMMENT:
-        	return state.map(comment => {
-        		return comment.id === action.id ? Object.assign({}, comment, { text: action.text }) : comment });
-        
-        case ADD_LIKE_TO_COMMENT:
-        	return state.map(comment => { 
-        		return comment.id === action.id ? Object.assign({}, comment, { votes: comment.votes + 1 }) : comment });
+		case EDIT_COMMENT:
+			return state.map(comment => {
+				return comment.id === action.id ? Object.assign({}, comment, { text: action.text }) : comment });
 
-        case ADD_UNLIKE_TO_COMMENT:
+		case ADD_LIKE_TO_COMMENT:
 			return state.map(comment => { 
-        		return comment.id === action.id ? Object.assign({}, comment, { votes: comment.votes - 1 }) : comment });
-        	
+				return comment.id === action.id ? Object.assign({}, comment, { votes: comment.votes + 1 }) : comment });
+
+		case ADD_UNLIKE_TO_COMMENT:
+			return state.map(comment => { 
+				return comment.id === action.id ? Object.assign({}, comment, { votes: comment.votes - 1 }) : comment });
+
 		default:
 			return state;
 	}
